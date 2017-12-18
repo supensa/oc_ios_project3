@@ -14,6 +14,10 @@ class MainViewController: UIViewController {
     private var futureBtn: Button!
     private var pastBtn: Button!
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return UIStatusBarStyle.default
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
