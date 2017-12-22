@@ -14,6 +14,8 @@
 		590BA9DC1FE7429F00F0521B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 590BA9DB1FE7429F00F0521B /* Default-568h@2x.png */; };
 		590BA9DE1FE7438900F0521B /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590BA9DD1FE7438900F0521B /* Button.swift */; };
 		590BA9E01FE7475500F0521B /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590BA9DF1FE7475500F0521B /* GameView.swift */; };
+		596F73DF1FEDA4C400EC8107 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596F73DE1FEDA4C400EC8107 /* Time.swift */; };
+		59F8CA5C1FECAE13004EA7E5 /* Prompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F8CA5B1FECAE13004EA7E5 /* Prompt.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		590BA9DB1FE7429F00F0521B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		590BA9DD1FE7438900F0521B /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		590BA9DF1FE7475500F0521B /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		596F73DE1FEDA4C400EC8107 /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
+		59F8CA5B1FECAE13004EA7E5 /* Prompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prompt.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				590BA9C61FE73FEC00F0521B /* AppDelegate.swift */,
+				59F8CA5A1FECAD88004EA7E5 /* Model */,
 				590BA9D91FE7425E00F0521B /* View */,
 				590BA9D81FE7425400F0521B /* Controller */,
 				590BA9DA1FE7427500F0521B /* Supporting Files */,
@@ -92,6 +97,15 @@
 				590BA9CF1FE73FEC00F0521B /* LaunchScreen.storyboard */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		59F8CA5A1FECAD88004EA7E5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				59F8CA5B1FECAE13004EA7E5 /* Prompt.swift */,
+				596F73DE1FEDA4C400EC8107 /* Time.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,10 +180,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				596F73DF1FEDA4C400EC8107 /* Time.swift in Sources */,
 				590BA9C91FE73FEC00F0521B /* MainViewController.swift in Sources */,
 				590BA9E01FE7475500F0521B /* GameView.swift in Sources */,
 				590BA9DE1FE7438900F0521B /* Button.swift in Sources */,
 				590BA9C71FE73FEC00F0521B /* AppDelegate.swift in Sources */,
+				59F8CA5C1FECAE13004EA7E5 /* Prompt.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

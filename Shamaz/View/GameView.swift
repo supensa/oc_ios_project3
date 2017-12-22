@@ -9,19 +9,16 @@
 import UIKit
 
 class GameView: UIView {
-    
-    let futureBtn = Button(title: "Future")
-    let pastBtn = Button(title: "Past", red: 100, green: 0, blue: 0)
-    let nextBtn = Button(title: "Next", red: 0, green: 100, blue: 0)
+    let futureBtn = Button(title: "DREAM of the Future")
+    let pastBtn = Button(title: "REFLECT on the past", red: 100, green: 0, blue: 0)
+    let nextBtn = Button(title: "Who's NEXT?", red: 0, green: 100, blue: 0)
     let label: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
         label.numberOfLines = 0
         label.textColor = UIColor.black
-        label.backgroundColor = UIColor.lightGray
+        label.backgroundColor = UIColor(r: 220, g: 220, b: 220)
         label.translatesAutoresizingMaskIntoConstraints = false
-        
-        label.text = "TEST !!!!"
         
         return label
     }()
@@ -48,6 +45,12 @@ class GameView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    convenience init(view v: UIView) {
+        self.init(frame: v.frame)
+        v.addSubview(self)
+        setupGameViewConstraint(view: v)
+    }
+    
     override init(frame f: CGRect) {
         super.init(frame: f)
         
@@ -57,8 +60,11 @@ class GameView: UIView {
         buttonStackView.addArrangedSubview(pastBtn)
         
         mainStackView.addArrangedSubview(buttonStackView)
-        mainStackView.addArrangedSubview(label)
         mainStackView.addArrangedSubview(nextBtn)
+        mainStackView.addArrangedSubview(label)
+        
+        nextBtn.isHidden = true
+//        label.isHidden = true
         
         self.addSubview(mainStackView)
         
@@ -67,14 +73,14 @@ class GameView: UIView {
         translatesAutoresizingMaskIntoConstraints = false
     }
     
-    func setupView(view: UIView){
-        topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+    private func setupGameViewConstraint(view v: UIView) {
+        topAnchor.constraint(equalTo: v.topAnchor).isActive = true
+        bottomAnchor.constraint(equalTo: v.bottomAnchor).isActive = true
+        leftAnchor.constraint(equalTo: v.leftAnchor).isActive = true
+        rightAnchor.constraint(equalTo: v.rightAnchor).isActive = true
     }
     
-    private func setupMainStackViewLayout(){
+    private func setupMainStackViewLayout() {
         setupButtonStackViewLayout()
         setupLabelLayout()
         mainStackView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
@@ -82,12 +88,29 @@ class GameView: UIView {
         mainStackView.widthAnchor.constraint(equalTo: self.widthAnchor, constant: -24).isActive = true
     }
     
-    private func setupButtonStackViewLayout(){
+    private func setupButtonStackViewLayout() {
         buttonStackView.widthAnchor.constraint(equalTo: mainStackView.widthAnchor).isActive = true
     }
     
-    private func setupLabelLayout(){
+    private func setupLabelLayout() {
         label.widthAnchor.constraint(equalTo: mainStackView.widthAnchor).isActive = true
-        label.heightAnchor.constraint(greaterThanOrEqualToConstant: 50).isActive = true
+    }
+    
+    func showNextBtn() {
+        futureBtn.isHidden = true
+        pastBtn.isHidden = true
+        nextBtn.isHidden = false
+    }
+    
+    func showStoryBtn() {
+        futureBtn.isHidden = false
+        pastBtn.isHidden = false
+        nextBtn.isHidden = true
+    }
+}
+
+extension UIColor {
+    convenience init(r:CGFloat, g:CGFloat, b:CGFloat) {
+        self.init(red: r/255, green: g/255, blue: b/255, alpha: 1)
     }
 }

@@ -10,9 +10,11 @@ import UIKit
 
 class MainViewController: UIViewController {
     
-    private var gameView = GameView()
+    private var gameView: GameView!
     private var futureBtn: Button!
     private var pastBtn: Button!
+    private var nextBtn: Button!
+    private var label: UILabel!
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return UIStatusBarStyle.default
@@ -20,26 +22,37 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.addSubview(gameView)
-        gameView.setupView(view: view)
+        gameView = GameView(view: view)
         
         futureBtn = gameView.futureBtn
         pastBtn = gameView.pastBtn
+        label = gameView.label
+        nextBtn = gameView.nextBtn
         
         setActions()
     }
     
     private func setActions() {
-        futureBtn.addTarget(self, action: #selector(pushFutureBtn), for: UIControlEvents.touchUpInside)
-        pastBtn.addTarget(self, action: #selector(pushPastBtn), for: UIControlEvents.touchUpInside)
+        futureBtn.addTarget(self, action: #selector(pressedFutureBtn), for: UIControlEvents.touchUpInside)
+        pastBtn.addTarget(self, action: #selector(pressedPastBtn), for: UIControlEvents.touchUpInside)
+        nextBtn.addTarget(self, action: #selector(pressednextBtn), for: UIControlEvents.touchUpInside)
     }
     
-    @objc private func pushFutureBtn() {
-        print("You pushed your FUTURE!")
+    @objc private func pressednextBtn() {
+//        print("You pushed to the NEXT!")
+        gameView.showStoryBtn()
+        label.text = "\(arc4random_uniform(UInt32(10)) + 1)"
     }
     
-    @objc private func pushPastBtn() {
-        print("You pushed your PAST!")
+    @objc private func pressedFutureBtn() {
+//        print("You pushed your FUTURE!")
+        gameView.showNextBtn()
+        label.text = Prompt().getSentence()
+    }
+    
+    @objc private func pressedPastBtn() {
+//        print("You pushed your PAST!")
+        gameView.showNextBtn()
+        label.text = Prompt().getSentence(fromFuture: false)
     }
 }
