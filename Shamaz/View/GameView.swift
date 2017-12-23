@@ -57,6 +57,7 @@ class GameView: UIView {
         super.init(frame: f)
         
         backgroundColor = UIColor.white
+        nextBtn.isAvailable = false
         
         buttonStackView.addArrangedSubview(futureBtn)
         buttonStackView.addArrangedSubview(pastBtn)
@@ -97,26 +98,25 @@ class GameView: UIView {
     
     func showNextBtn() {
         unvisibleButtons(buttons: [futureBtn, pastBtn])
-        nextBtn.isVisible = true
+        nextBtn.isAvailable = true
     }
     
     func showStoryBtn() {
         visibleButtons(buttons: [futureBtn, pastBtn])
-        nextBtn.isVisible = false
+        nextBtn.isAvailable = false
     }
     
     private func unvisibleButtons(buttons: [Button]) {
         for button in buttons {
-            button.isVisible = false
+            button.isAvailable = false
         }
     }
     
     private func visibleButtons(buttons: [Button]) {
         for button in buttons {
-            button.isVisible = true
+            button.isAvailable = true
         }
     }
-    
 }
 
 extension UIColor {

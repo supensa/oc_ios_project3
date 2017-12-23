@@ -10,9 +10,9 @@ import UIKit
 
 class Button: UIButton {
     
-    var isVisible: Bool! {
+    var isAvailable: Bool! {
         didSet {
-            if isVisible {
+            if isAvailable {
                 self.backgroundColor = defaultColor
                 self.isEnabled = true
             } else {
@@ -26,7 +26,7 @@ class Button: UIButton {
     
     convenience init(title text: String, red r: CGFloat = 0, green g: CGFloat = 0, blue b: CGFloat = 100, alpha a: CGFloat = 1) {
         self.init()
-        self.isVisible = true
+        self.isAvailable = true
         self.defaultColor = UIColor(red: r/255, green: g/255, blue: b/255, alpha: a)
         self.backgroundColor = defaultColor
         self.setTitle(text, for: UIControlState.normal)
