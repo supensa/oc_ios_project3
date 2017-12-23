@@ -17,6 +17,8 @@ class GameView: UIView {
         label.textAlignment = .center
         label.numberOfLines = 0
         label.textColor = UIColor.black
+        label.text = "Welcome to the Shamaz game."
+        label.heightAnchor.constraint(equalToConstant: 50).isActive = true
         label.backgroundColor = UIColor(r: 220, g: 220, b: 220)
         label.translatesAutoresizingMaskIntoConstraints = false
         
@@ -60,11 +62,8 @@ class GameView: UIView {
         buttonStackView.addArrangedSubview(pastBtn)
         
         mainStackView.addArrangedSubview(buttonStackView)
-        mainStackView.addArrangedSubview(nextBtn)
         mainStackView.addArrangedSubview(label)
-        
-        nextBtn.isHidden = true
-//        label.isHidden = true
+        mainStackView.addArrangedSubview(nextBtn)
         
         self.addSubview(mainStackView)
         
@@ -97,16 +96,27 @@ class GameView: UIView {
     }
     
     func showNextBtn() {
-        futureBtn.isHidden = true
-        pastBtn.isHidden = true
-        nextBtn.isHidden = false
+        unvisibleButtons(buttons: [futureBtn, pastBtn])
+        nextBtn.isVisible = true
     }
     
     func showStoryBtn() {
-        futureBtn.isHidden = false
-        pastBtn.isHidden = false
-        nextBtn.isHidden = true
+        visibleButtons(buttons: [futureBtn, pastBtn])
+        nextBtn.isVisible = false
     }
+    
+    private func unvisibleButtons(buttons: [Button]) {
+        for button in buttons {
+            button.isVisible = false
+        }
+    }
+    
+    private func visibleButtons(buttons: [Button]) {
+        for button in buttons {
+            button.isVisible = true
+        }
+    }
+    
 }
 
 extension UIColor {
