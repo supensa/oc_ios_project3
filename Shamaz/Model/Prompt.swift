@@ -29,7 +29,7 @@ class Prompt {
     private func setFutureSentences() -> [String] {
         return [
             "Who would you like to meet \(moment) from now ?", "What job would you like to do in \(moment) ?",
-            "Would you like to change your carreer \(moment) from now ?", "Where would you like to travel in \(moment) ?",
+            "Would you like to change your career \(moment) from now ?", "Where would you like to travel in \(moment) ?",
             "Where are you planning to live \(moment) from now ?", "Would you like to become an iOS developer in \(moment) ?"
         ]
     }

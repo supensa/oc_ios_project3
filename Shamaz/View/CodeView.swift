@@ -8,10 +8,10 @@
 
 import UIKit
 
-class GameView: UIView {
-    let futureBtn = Button(title: "DREAM of the Future")
-    let pastBtn = Button(title: "REFLECT on the past", red: 100, green: 0, blue: 0)
-    let nextBtn = Button(title: "Who's NEXT?", red: 0, green: 100, blue: 0)
+class CodeView: UIView {
+    let futureBtn = CodeButton(title: "DREAM of the Future")
+    let pastBtn = CodeButton(title: "REFLECT on the past", red: 100, green: 0, blue: 0)
+    let nextBtn = CodeButton(title: "Who's NEXT?", red: 0, green: 100, blue: 0)
     let label: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
@@ -106,13 +106,13 @@ class GameView: UIView {
         nextBtn.isAvailable = false
     }
     
-    private func unvisibleButtons(buttons: [Button]) {
+    private func unvisibleButtons(buttons: [CodeButton]) {
         for button in buttons {
             button.isAvailable = false
         }
     }
     
-    private func visibleButtons(buttons: [Button]) {
+    private func visibleButtons(buttons: [CodeButton]) {
         for button in buttons {
             button.isAvailable = true
         }

@@ -1,5 +1,5 @@
 //
-//  MainViewController.swift
+//  CodeViewController.swift
 //  Shamaz
 //
 //  Created by Spencer Forrest on 18/12/2017.
@@ -8,12 +8,12 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class CodeViewController: UIViewController {
     
-    private weak var gameView: GameView!
-    private weak var futureBtn: Button!
-    private weak var pastBtn: Button!
-    private weak var nextBtn: Button!
+    private weak var gameView: CodeView!
+    private weak var futureBtn: CodeButton!
+    private weak var pastBtn: CodeButton!
+    private weak var nextBtn: CodeButton!
     private weak var label: UILabel!
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -22,7 +22,7 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        gameView = GameView(view: view)
+        gameView = CodeView(view: view)
         
         futureBtn = gameView.futureBtn
         pastBtn = gameView.pastBtn
