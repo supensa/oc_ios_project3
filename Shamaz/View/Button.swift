@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CodeButton: UIButton {
+class Button: UIButton {
     
     var isAvailable: Bool! {
         didSet {

@@ -1,5 +1,5 @@
 //
-//  CodeViewController.swift
+//  ViewController.swift
 //  Shamaz
 //
 //  Created by Spencer Forrest on 18/12/2017.
@@ -8,12 +8,12 @@
 
 import UIKit
 
-class CodeViewController: UIViewController {
+class ViewController: UIViewController {
     
-    private weak var gameView: CodeView!
-    private weak var futureBtn: CodeButton!
-    private weak var pastBtn: CodeButton!
-    private weak var nextBtn: CodeButton!
+    private weak var gameView: GameView!
+    private weak var futureBtn: Button!
+    private weak var pastBtn: Button!
+    private weak var nextBtn: Button!
     private weak var label: UILabel!
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -22,12 +22,12 @@ class CodeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        gameView = CodeView(view: view)
+        gameView = GameView(view: view)
         
-        futureBtn = gameView.futureBtn
-        pastBtn = gameView.pastBtn
+        futureBtn = gameView.futureButton
+        pastBtn = gameView.pastButton
         label = gameView.label
-        nextBtn = gameView.nextBtn
+        nextBtn = gameView.nextButton
         
         setActions()
     }
@@ -39,17 +39,17 @@ class CodeViewController: UIViewController {
     }
     
     @objc private func pressednextBtn() {
-        gameView.showStoryBtn()
+        gameView.showStoryButton()
         label.text = "\(arc4random_uniform(UInt32(10)) + 1)"
     }
     
     @objc private func pressedFutureBtn() {
-        gameView.showNextBtn()
+        gameView.showNextButton()
         label.text = Prompt().getSentence()
     }
     
     @objc private func pressedPastBtn() {
-        gameView.showNextBtn()
+        gameView.showNextButton()
         label.text = Prompt().getSentence(fromFuture: false)
     }
 }

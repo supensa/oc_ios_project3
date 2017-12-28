@@ -8,10 +8,10 @@
 
 import UIKit
 
-class CodeView: UIView {
-    let futureBtn = CodeButton(title: "DREAM of the Future")
-    let pastBtn = CodeButton(title: "REFLECT on the past", red: 100, green: 0, blue: 0)
-    let nextBtn = CodeButton(title: "Who's NEXT?", red: 0, green: 100, blue: 0)
+class GameView: UIView {
+    let futureButton = Button(title: "DREAM of the Future")
+    let pastButton = Button(title: "REFLECT on the past", red: 100, green: 0, blue: 0)
+    let nextButton = Button(title: "Who's NEXT?", red: 0, green: 100, blue: 0)
     let label: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
@@ -57,14 +57,14 @@ class CodeView: UIView {
         super.init(frame: f)
         
         backgroundColor = UIColor.white
-        nextBtn.isAvailable = false
+        nextButton.isAvailable = false
         
-        buttonStackView.addArrangedSubview(futureBtn)
-        buttonStackView.addArrangedSubview(pastBtn)
+        buttonStackView.addArrangedSubview(futureButton)
+        buttonStackView.addArrangedSubview(pastButton)
         
         mainStackView.addArrangedSubview(buttonStackView)
         mainStackView.addArrangedSubview(label)
-        mainStackView.addArrangedSubview(nextBtn)
+        mainStackView.addArrangedSubview(nextButton)
         
         self.addSubview(mainStackView)
         
@@ -96,23 +96,23 @@ class CodeView: UIView {
         label.widthAnchor.constraint(equalTo: mainStackView.widthAnchor).isActive = true
     }
     
-    func showNextBtn() {
-        unvisibleButtons(buttons: [futureBtn, pastBtn])
-        nextBtn.isAvailable = true
+    func showNextButton() {
+        unvisibleButtons(buttons: [futureButton, pastButton])
+        nextButton.isAvailable = true
     }
     
-    func showStoryBtn() {
-        visibleButtons(buttons: [futureBtn, pastBtn])
-        nextBtn.isAvailable = false
+    func showStoryButton() {
+        visibleButtons(buttons: [futureButton, pastButton])
+        nextButton.isAvailable = false
     }
     
-    private func unvisibleButtons(buttons: [CodeButton]) {
+    private func unvisibleButtons(buttons: [Button]) {
         for button in buttons {
             button.isAvailable = false
         }
     }
     
-    private func visibleButtons(buttons: [CodeButton]) {
+    private func visibleButtons(buttons: [Button]) {
         for button in buttons {
             button.isAvailable = true
         }
