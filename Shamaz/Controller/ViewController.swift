@@ -8,40 +8,36 @@
 
 import UIKit
 
-class StoryboardViewController: UIViewController {
+class ViewController: UIViewController {
 
-    @IBOutlet weak var futureBtn: StoryboardButton!
-    @IBOutlet weak var pastBtn: StoryboardButton!
+    @IBOutlet weak var futureButton: StoryboardButton!
+    @IBOutlet weak var pastButton: StoryboardButton!
     @IBOutlet weak var label: UILabel!
-    @IBOutlet weak var nextBtn: StoryboardButton!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
-    @IBAction func pressednextBtn() {
-        showStoryBtn()
+    @IBOutlet weak var nextButton: StoryboardButton!
+  
+    @IBAction func nextButtonPressed() {
+        showStoryButtons()
         label.text = "\(arc4random_uniform(UInt32(10)) + 1)"
     }
     
-    @IBAction func pressedFutureBtn() {
-        showNextBtn()
+    @IBAction func futureButtonPressed() {
+        showNextButton()
         label.text = Prompt().getSentence()
     }
     
-    @IBAction func pressedPastBtn() {
-        showNextBtn()
+    @IBAction func pastButtonPressed() {
+        showNextButton()
         label.text = Prompt().getSentence(fromFuture: false)
     }
     
-    private func showNextBtn() {
-        unvisibleButtons(buttons: [futureBtn!, pastBtn!])
-        nextBtn.isAvailable = true
+    private func showNextButton() {
+        unvisibleButtons(buttons: [futureButton!, pastButton!])
+        nextButton.isAvailable = true
     }
     
-    private func showStoryBtn() {
-        visibleButtons(buttons: [futureBtn!, pastBtn!])
-        nextBtn.isAvailable = false
+    private func showStoryButtons() {
+        visibleButtons(buttons: [futureButton!, pastButton!])
+        nextButton.isAvailable = false
     }
     
     private func unvisibleButtons(buttons: [StoryboardButton]) {

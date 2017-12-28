@@ -33,10 +33,4 @@ class Prompt {
             "Where are you planning to live \(moment) from now ?", "Would you like to become an iOS developer in \(moment) ?"
         ]
     }
-    
-//    private func getSentence() -> String {
-//        let max = UInt32(sentences.count)
-//        let index = Int(arc4random_uniform(max))
-//        return sentences[index]
-//    }
 }
