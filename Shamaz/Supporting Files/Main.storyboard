@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KuY-fK-m1e">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,17 +15,17 @@
             <objects>
                 <viewController id="KuY-fK-m1e" customClass="ViewController" customModule="Shamaz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1iZ-Uj-gB9">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="kdd-3o-P1p">
-                                <rect key="frame" x="12" y="235" width="576" height="130"/>
+                                <rect key="frame" x="12" y="303" width="390" height="130"/>
                                 <subviews>
                                     <stackView autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="T6P-GV-8hD">
-                                        <rect key="frame" x="0.0" y="0.0" width="576" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="30"/>
                                         <subviews>
-                                            <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sns-P5-18i" customClass="StoryboardButton" customModule="Shamaz" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="283" height="30"/>
+                                            <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sns-P5-18i" userLabel="Future" customClass="Button" customModule="Shamaz" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="190" height="30"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.39215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="DREAM of the Future">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -33,13 +37,14 @@
                                                     <userDefinedRuntimeAttribute type="color" keyPath="defaultColor">
                                                         <color key="value" red="0.0" green="0.0" blue="0.39215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isAvailable" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="futureButtonPressed" destination="KuY-fK-m1e" eventType="touchUpInside" id="je5-fw-XUv"/>
                                                 </connections>
                                             </button>
-                                            <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X6e-EK-cS8" customClass="StoryboardButton" customModule="Shamaz" customModuleProvider="target">
-                                                <rect key="frame" x="293" y="0.0" width="283" height="30"/>
+                                            <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X6e-EK-cS8" userLabel="Past" customClass="Button" customModule="Shamaz" customModuleProvider="target">
+                                                <rect key="frame" x="200" y="0.0" width="190" height="30"/>
                                                 <color key="backgroundColor" red="0.39215686274509803" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="REFLECT on the past">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -51,6 +56,7 @@
                                                     <userDefinedRuntimeAttribute type="color" keyPath="defaultColor">
                                                         <color key="value" red="0.39215686274509803" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isAvailable" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="pastButtonPressed" destination="KuY-fK-m1e" eventType="touchUpInside" id="CUl-9e-QZz"/>
@@ -59,7 +65,7 @@
                                         </subviews>
                                     </stackView>
                                     <label autoresizesSubviews="NO" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to the Shamaz game." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8oX-oa-aKE">
-                                        <rect key="frame" x="0.0" y="40" width="576" height="50"/>
+                                        <rect key="frame" x="0.0" y="40" width="390" height="50"/>
                                         <color key="backgroundColor" red="0.86274509803921573" green="0.86274509803921573" blue="0.86274509803921573" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="Zbp-4H-U4Z"/>
@@ -68,8 +74,8 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YNk-g6-4TR" customClass="StoryboardButton" customModule="Shamaz" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="100" width="576" height="30"/>
+                                    <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YNk-g6-4TR" userLabel="Next" customClass="Button" customModule="Shamaz" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="100" width="390" height="30"/>
                                         <color key="backgroundColor" red="0.0" green="0.39215686274509803" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Who's NEXT?">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

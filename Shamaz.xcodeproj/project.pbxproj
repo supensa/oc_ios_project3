@@ -11,10 +11,10 @@
 		590BA9CE1FE73FEC00F0521B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 590BA9CD1FE73FEC00F0521B /* Assets.xcassets */; };
 		590BA9D11FE73FEC00F0521B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 590BA9CF1FE73FEC00F0521B /* LaunchScreen.storyboard */; };
 		590BA9DC1FE7429F00F0521B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 590BA9DB1FE7429F00F0521B /* Default-568h@2x.png */; };
-		596F73DF1FEDA4C400EC8107 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596F73DE1FEDA4C400EC8107 /* Time.swift */; };
+		596F73DF1FEDA4C400EC8107 /* RandomTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596F73DE1FEDA4C400EC8107 /* RandomTime.swift */; };
 		59B6C4FE1FEE979D0090F2F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59B6C4FD1FEE979D0090F2F1 /* Main.storyboard */; };
 		59B6C5001FEE9B9B0090F2F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B6C4FF1FEE9B9B0090F2F1 /* ViewController.swift */; };
-		59B6C5041FEE9EBC0090F2F1 /* StoryboardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B6C5031FEE9EBC0090F2F1 /* StoryboardButton.swift */; };
+		59B6C5041FEE9EBC0090F2F1 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B6C5031FEE9EBC0090F2F1 /* Button.swift */; };
 		59F8CA5C1FECAE13004EA7E5 /* Prompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F8CA5B1FECAE13004EA7E5 /* Prompt.swift */; };
 /* End PBXBuildFile section */
 
@@ -25,10 +25,10 @@
 		590BA9D01FE73FEC00F0521B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		590BA9D21FE73FEC00F0521B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		590BA9DB1FE7429F00F0521B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		596F73DE1FEDA4C400EC8107 /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
+		596F73DE1FEDA4C400EC8107 /* RandomTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomTime.swift; sourceTree = "<group>"; };
 		59B6C4FD1FEE979D0090F2F1 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		59B6C4FF1FEE9B9B0090F2F1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		59B6C5031FEE9EBC0090F2F1 /* StoryboardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardButton.swift; sourceTree = "<group>"; };
+		59B6C5031FEE9EBC0090F2F1 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		59F8CA5B1FECAE13004EA7E5 /* Prompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prompt.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,7 +82,7 @@
 		590BA9D91FE7425E00F0521B /* View */ = {
 			isa = PBXGroup;
 			children = (
-				59B6C5031FEE9EBC0090F2F1 /* StoryboardButton.swift */,
+				59B6C5031FEE9EBC0090F2F1 /* Button.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -103,7 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				59F8CA5B1FECAE13004EA7E5 /* Prompt.swift */,
-				596F73DE1FEDA4C400EC8107 /* Time.swift */,
+				596F73DE1FEDA4C400EC8107 /* RandomTime.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -181,8 +181,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				59B6C5041FEE9EBC0090F2F1 /* StoryboardButton.swift in Sources */,
-				596F73DF1FEDA4C400EC8107 /* Time.swift in Sources */,
+				59B6C5041FEE9EBC0090F2F1 /* Button.swift in Sources */,
+				596F73DF1FEDA4C400EC8107 /* RandomTime.swift in Sources */,
 				59B6C5001FEE9B9B0090F2F1 /* ViewController.swift in Sources */,
 				590BA9C71FE73FEC00F0521B /* AppDelegate.swift in Sources */,
 				59F8CA5C1FECAE13004EA7E5 /* Prompt.swift in Sources */,
