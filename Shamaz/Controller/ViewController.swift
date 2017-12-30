@@ -9,47 +9,43 @@
 import UIKit
 
 class ViewController: UIViewController {
+  
+  private weak var gameView: GameView!
+  private weak var futureButton: Button!
+  private weak var pastButton: Button!
+  private weak var nextButton: Button!
+  private weak var label: UILabel!
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    gameView = GameView(view: view)
     
-    private weak var gameView: GameView!
-    private weak var futureBtn: Button!
-    private weak var pastBtn: Button!
-    private weak var nextBtn: Button!
-    private weak var label: UILabel!
+    futureButton = gameView.futureButton
+    pastButton = gameView.pastButton
+    label = gameView.label
+    nextButton = gameView.nextButton
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return UIStatusBarStyle.default
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        gameView = GameView(view: view)
-        
-        futureBtn = gameView.futureButton
-        pastBtn = gameView.pastButton
-        label = gameView.label
-        nextBtn = gameView.nextButton
-        
-        setActions()
-    }
-    
-    private func setActions() {
-        futureBtn.addTarget(self, action: #selector(pressedFutureBtn), for: UIControlEvents.touchUpInside)
-        pastBtn.addTarget(self, action: #selector(pressedPastBtn), for: UIControlEvents.touchUpInside)
-        nextBtn.addTarget(self, action: #selector(pressednextBtn), for: UIControlEvents.touchUpInside)
-    }
-    
-    @objc private func pressednextBtn() {
-        gameView.showStoryButton()
-        label.text = "\(arc4random_uniform(UInt32(10)) + 1)"
-    }
-    
-    @objc private func pressedFutureBtn() {
-        gameView.showNextButton()
-        label.text = Prompt().getSentence()
-    }
-    
-    @objc private func pressedPastBtn() {
-        gameView.showNextButton()
-        label.text = Prompt().getSentence(fromFuture: false)
-    }
+    setupActions()
+  }
+  
+  private func setupActions() {
+    futureButton.addTarget(self, action: #selector(futureButtonPressed), for: UIControlEvents.touchUpInside)
+    pastButton.addTarget(self, action: #selector(pastButtonPressed), for: UIControlEvents.touchUpInside)
+    nextButton.addTarget(self, action: #selector(nextButtonPressed), for: UIControlEvents.touchUpInside)
+  }
+  
+  @objc private func nextButtonPressed() {
+    gameView.showStoryButton()
+    label.text = "\(arc4random_uniform(UInt32(10)) + 1)"
+  }
+  
+  @objc private func futureButtonPressed() {
+    gameView.showNextButton()
+    label.text = Prompt().getSentence()
+  }
+  
+  @objc private func pastButtonPressed() {
+    gameView.showNextButton()
+    label.text = Prompt().getSentence(fromFuture: false)
+  }
 }

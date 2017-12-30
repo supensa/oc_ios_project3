@@ -9,28 +9,28 @@
 import UIKit
 
 class Button: UIButton {
-    
-    var isAvailable: Bool! {
-        didSet {
-            if isAvailable {
-                self.backgroundColor = defaultColor
-                self.isEnabled = true
-            } else {
-                self.backgroundColor = UIColor.lightGray
-                self.isEnabled = false
-            }
-        }
-    }
-    
-    private var defaultColor: UIColor!
-    
-    convenience init(title text: String, red r: CGFloat = 0, green g: CGFloat = 0, blue b: CGFloat = 100, alpha a: CGFloat = 1) {
-        self.init()
-        self.isAvailable = true
-        self.defaultColor = UIColor(red: r/255, green: g/255, blue: b/255, alpha: a)
+  
+  var isAvailable: Bool! {
+    didSet {
+      if isAvailable {
         self.backgroundColor = defaultColor
-        self.setTitle(text, for: UIControlState.normal)
-        self.setTitleColor(UIColor.white, for: UIControlState.normal)
-        self.layer.cornerRadius = 5
+        self.isEnabled = true
+      } else {
+        self.backgroundColor = UIColor.lightGray
+        self.isEnabled = false
+      }
     }
+  }
+  
+  private var defaultColor: UIColor!
+  
+  convenience init(title text: String, color: UIColor) {
+    self.init()
+    self.isAvailable = true
+    self.defaultColor = color
+    self.backgroundColor = defaultColor
+    self.setTitle(text, for: UIControlState.normal)
+    self.setTitleColor(UIColor.white, for: UIControlState.normal)
+    self.layer.cornerRadius = 5
+  }
 }
