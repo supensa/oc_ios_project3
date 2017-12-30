@@ -15,37 +15,48 @@ class ViewController: UIViewController {
   @IBOutlet weak var label: UILabel!
   @IBOutlet weak var nextButton: Button!
   
+  /// Indicate who is the next person to play
   @IBAction func nextButtonPressed() {
-    showStoryButtons()
+    showQuestionButtons()
     label.text = "\(arc4random_uniform(UInt32(10)) + 1)"
   }
   
+  /// Display a question about the future
   @IBAction func futureButtonPressed() {
     showNextButton()
-    label.text = Prompt().getSentence()
+    label.text = Question().getRandom()
   }
   
+  /// Display a question about the past
   @IBAction func pastButtonPressed() {
     showNextButton()
-    label.text = Prompt().getSentence(fromFuture: false)
+    label.text = Question().getRandom(fromFuture: false)
   }
   
+  /// Make question buttons unavailable and next button available
   private func showNextButton() {
     makeButtonsUnavailable(buttons: [futureButton!, pastButton!])
     nextButton.isAvailable = true
   }
   
-  private func showStoryButtons() {
+  /// Make question buttons available and next button unavailable
+  private func showQuestionButtons() {
     makeButtonsAvailable(buttons: [futureButton!, pastButton!])
     nextButton.isAvailable = false
   }
   
+  /// Buttons that should become unavailable
+  ///
+  /// - Parameter buttons: Array of "Buttons".
   private func makeButtonsUnavailable(buttons: [Button]) {
     for button in buttons {
       button.isAvailable = false
     }
   }
   
+  /// Buttons that should become available
+  ///
+  /// - Parameter buttons: Array of "Buttons".
   private func makeButtonsAvailable(buttons: [Button]) {
     for button in buttons {
       button.isAvailable = true

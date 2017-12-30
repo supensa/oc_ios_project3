@@ -9,8 +9,11 @@
 import UIKit
 
 @IBDesignable
+/// Button that implements a "available" state and some aesthetic
 class Button: UIButton {
   
+  /// Available buttons can be selected and have their original color
+  /// Unavailable buttons cannot be selected and are gray
   @IBInspectable var isAvailable: Bool = true {
     didSet {
       if isAvailable {
@@ -25,6 +28,7 @@ class Button: UIButton {
   
   @IBInspectable private var defaultColor: UIColor = UIColor.blue
   
+  /// Round the corner of the button if desired
   @IBInspectable private var cornerRadius: CGFloat = 5 {
     didSet {
       self.layer.cornerRadius = cornerRadius

@@ -1,5 +1,5 @@
 //
-//  Time.swift
+//  RandomTime.swift
 //  Shamaz
 //
 //  Created by Spencer Forrest on 22/12/2017.
@@ -8,24 +8,25 @@
 
 import Foundation
 
+/// An Object that provides a random duration
 class RandomTime {
+  
+  /// Generate a random duration.
+  /// Example: "a year" or "5 days"
+  ///
+  /// - Returns: String representing the duration
   func getString() -> String {
-    
-    let NUMBER_MAX_DAYS: UInt32 = 6
-    let NUMBER_MAX_WEEK: UInt32 = 3
-    let NUMBER_MAX_MONTH: UInt32 = 11
-    let NUMBER_MAX_YEAR: UInt32 = 10
     
     let randomChoice = Int(arc4random_uniform(4)) + 1
     switch randomChoice {
     case 1:
       return getString(unit: "day", limitTime: NUMBER_MAX_DAYS)
     case 2:
-      return getString(unit: "week", limitTime: NUMBER_MAX_WEEK)
+      return getString(unit: "week", limitTime: NUMBER_MAX_WEEKS)
     case 3:
-      return getString(unit: "month", limitTime: NUMBER_MAX_MONTH)
+      return getString(unit: "month", limitTime: NUMBER_MAX_MONTHS)
     default:
-      return getString(unit: "year", limitTime: NUMBER_MAX_YEAR)
+      return getString(unit: "year", limitTime: NUMBER_MAX_YEARS)
     }
   }
   
