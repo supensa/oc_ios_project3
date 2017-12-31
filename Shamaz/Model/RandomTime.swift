@@ -5,12 +5,17 @@
 //  Created by Spencer Forrest on 22/12/2017.
 //  Copyright © 2017 Spencer Forrest. All rights reserved.
 //
-
 import Foundation
 
+/// An Object providing a random duration
 class RandomTime {
   
+  /// Generate a random duration.
+  /// Example: "a year" or "5 days"
+  ///
+  /// - Returns: String representing the duration
   func getString() -> String {
+    
     let randomChoice = Int(arc4random_uniform(4)) + 1
     switch randomChoice {
     case 1:

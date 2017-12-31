@@ -18,7 +18,7 @@
 		59AFCB541FF6E67D0020B06E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AFCB531FF6E67D0020B06E /* Constants.swift */; };
 		59AFCB561FF720510020B06E /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AFCB551FF720510020B06E /* UIStackView.swift */; };
 		59AFCB581FF723280020B06E /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AFCB571FF723280020B06E /* UIColor.swift */; };
-		59F8CA5C1FECAE13004EA7E5 /* Prompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F8CA5B1FECAE13004EA7E5 /* Prompt.swift */; };
+		59F8CA5C1FECAE13004EA7E5 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F8CA5B1FECAE13004EA7E5 /* Question.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +35,7 @@
 		59AFCB531FF6E67D0020B06E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		59AFCB551FF720510020B06E /* UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
 		59AFCB571FF723280020B06E /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
-		59F8CA5B1FECAE13004EA7E5 /* Prompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prompt.swift; sourceTree = "<group>"; };
+		59F8CA5B1FECAE13004EA7E5 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,7 +127,7 @@
 		59F8CA5A1FECAD88004EA7E5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				59F8CA5B1FECAE13004EA7E5 /* Prompt.swift */,
+				59F8CA5B1FECAE13004EA7E5 /* Question.swift */,
 				596F73DE1FEDA4C400EC8107 /* RandomTime.swift */,
 			);
 			path = Model;
@@ -213,7 +213,7 @@
 				590BA9C71FE73FEC00F0521B /* AppDelegate.swift in Sources */,
 				59AFCB541FF6E67D0020B06E /* Constants.swift in Sources */,
 				59799A961FF5471D00614959 /* Button.swift in Sources */,
-				59F8CA5C1FECAE13004EA7E5 /* Prompt.swift in Sources */,
+				59F8CA5C1FECAE13004EA7E5 /* Question.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// Object representing the main view of the game
 class GameView: UIView {
   
   let futureButton = Button(title: "DREAM of the Future", color: FUTURE_BUTTON_BACKGROUND_COLOR)
@@ -29,16 +30,19 @@ class GameView: UIView {
     setupGameView(view: v)
   }
   
+  /// Make question buttons unavailable and next button available
   func showNextButton() {
     makeButtonsUnavailable(buttons: [futureButton, pastButton])
     nextButton.isAvailable = true
   }
   
-  func showStoryButton() {
+  /// Make question buttons available and next button unavailable
+  func showQuestionButtons() {
     makeButtonsAvailable(buttons: [futureButton, pastButton])
     nextButton.isAvailable = false
   }
   
+  /// Stack view used to layout the "question buttons"
   private let buttonStackView: UIStackView = {
     let stackView = UIStackView()
     stackView.axis = .horizontal
@@ -47,6 +51,7 @@ class GameView: UIView {
     return stackView
   }()
   
+  /// Stack view used to layout the whole (buttons and label)
   private let mainStackView: UIStackView = {
     let stackView = UIStackView()
     stackView.axis = .vertical
@@ -55,31 +60,37 @@ class GameView: UIView {
     return stackView
   }()
   
-  private func setupGameView(view v: UIView) {
+  /// Setup the main view of the game
+  ///
+  /// - Parameter view: Controller's default view
+  private func setupGameView(view: UIView) {
     backgroundColor = UIColor.white
     nextButton.isAvailable = false
     
     buttonStackView.addArrangedSubviews([futureButton, pastButton])
     mainStackView.addArrangedSubviews([buttonStackView, label, nextButton])
     self.addSubview(mainStackView)
-    v.addSubview(self)
+    view.addSubview(self)
     
-    setupConstraints(view: v)
+    setupConstraints(view: view)
   }
   
-  private func setupConstraints(view v: UIView) {
-    setupGameViewConstraints(view: v)
+  /// Setup all the constraints for all the views
+  ///
+  /// - Parameter view: Controller's default view
+  private func setupConstraints(view: UIView) {
+    setupGameViewConstraints(view: view)
     setupButtonStackViewConstraints()
     setupLabelConstraints()
     setupMainStackViewConstraints()
   }
   
-  private func setupGameViewConstraints(view v: UIView) {
+  private func setupGameViewConstraints(view: UIView) {
     translatesAutoresizingMaskIntoConstraints = false
-    topAnchor.constraint(equalTo: v.topAnchor).isActive = true
-    bottomAnchor.constraint(equalTo: v.bottomAnchor).isActive = true
-    leftAnchor.constraint(equalTo: v.leftAnchor).isActive = true
-    rightAnchor.constraint(equalTo: v.rightAnchor).isActive = true
+    topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+    bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+    leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+    rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
   }
   
   private func setupButtonStackViewConstraints() {
@@ -100,12 +111,18 @@ class GameView: UIView {
     mainStackView.widthAnchor.constraint(equalTo: self.widthAnchor, constant: -24).isActive = true
   }
   
+  /// Buttons that should become unavailable
+  ///
+  /// - Parameter buttons: Array of "Buttons".
   private func makeButtonsUnavailable(buttons: [Button]) {
     for button in buttons {
       button.isAvailable = false
     }
   }
   
+  /// Buttons that should become available
+  ///
+  /// - Parameter buttons: Array of "Buttons".
   private func makeButtonsAvailable(buttons: [Button]) {
     for button in buttons {
       button.isAvailable = true

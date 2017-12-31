@@ -28,24 +28,28 @@ class ViewController: UIViewController {
     setupActions()
   }
   
+  /// Setup actions with corresponding buttons and events
   private func setupActions() {
     futureButton.addTarget(self, action: #selector(futureButtonPressed), for: UIControlEvents.touchUpInside)
     pastButton.addTarget(self, action: #selector(pastButtonPressed), for: UIControlEvents.touchUpInside)
     nextButton.addTarget(self, action: #selector(nextButtonPressed), for: UIControlEvents.touchUpInside)
   }
   
+  /// Indicate who is the next person to play
   @objc private func nextButtonPressed() {
-    gameView.showStoryButton()
+    gameView.showQuestionButtons()
     label.text = "\(arc4random_uniform(UInt32(10)) + 1)"
   }
   
+  /// Display a question about the future
   @objc private func futureButtonPressed() {
     gameView.showNextButton()
-    label.text = Prompt().getSentence()
+    label.text = Question().getRandom()
   }
   
+  /// Display a question about the past
   @objc private func pastButtonPressed() {
     gameView.showNextButton()
-    label.text = Prompt().getSentence(fromFuture: false)
+    label.text = Question().getRandom(fromFuture: false)
   }
 }
