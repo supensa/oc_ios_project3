@@ -9,7 +9,7 @@
 import UIKit
 
 @IBDesignable
-/// Button that implements a "available" state and some aesthetic
+/// Customed UIButton that implements an "available" state with a more aesthetic layout
 class Button: UIButton {
   
   /// Available buttons can be selected and have their original color
