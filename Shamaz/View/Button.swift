@@ -12,6 +12,11 @@ import UIKit
 /// Customed UIButton that implements an "available" state with a more aesthetic layout
 class Button: UIButton {
   
+  required init?(coder aDecoder: NSCoder) {
+    super.init(coder: aDecoder)
+    self.titleLabel?.adjustsFontSizeToFitWidth = true
+  }
+  
   /// Available buttons can be selected and have their original color
   /// Unavailable buttons cannot be selected and are gray
   @IBInspectable var isAvailable: Bool = true {
