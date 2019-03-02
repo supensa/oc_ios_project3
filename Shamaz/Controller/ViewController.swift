@@ -18,7 +18,7 @@ class ViewController: UIViewController {
   /// Indicate who is the next person to play
   @IBAction func nextButtonPressed() {
     showQuestionButtons()
-    label.text = "\(arc4random_uniform(UInt32(10)) + 1)"
+    label.text = "\(UInt32.random(in: 1...10))"
   }
   
   /// Display a question about the future
