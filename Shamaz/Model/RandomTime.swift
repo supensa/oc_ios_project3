@@ -6,8 +6,6 @@
 //  Copyright © 2017 Spencer Forrest. All rights reserved.
 //
 
-import Foundation
-
 /// An Object that provides a random duration
 class RandomTime {
   
@@ -17,7 +15,7 @@ class RandomTime {
   /// - Returns: String representing the duration
   func getString() -> String {
     
-    let randomChoice = Int(arc4random_uniform(4)) + 1
+    let randomChoice = Int.random(in: 1...4)
     switch randomChoice {
     case 1:
       return getString(unit: "day", limitTime: NUMBER_MAX_DAYS)
@@ -30,8 +28,8 @@ class RandomTime {
     }
   }
   
-  private func getString(unit: String, limitTime max: UInt32) -> String {
-    let randomTime = Int(arc4random_uniform(max)) + 1
+  private func getString(unit: String, limitTime max: Int) -> String {
+    let randomTime = Int.random(in: 1...max)
     return randomTime == 1 ? "a \(unit)" : "\(randomTime) \(unit)s"
   }
 }
