@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
   
-  private weak var gameView: GameView!
+  private var gameView: GameView!
   private weak var futureButton: Button!
   private weak var pastButton: Button!
   private weak var nextButton: Button!
@@ -30,15 +30,15 @@ class ViewController: UIViewController {
   
   /// Setup actions with corresponding buttons and events
   private func setupActions() {
-    futureButton.addTarget(self, action: #selector(futureButtonPressed), for: UIControlEvents.touchUpInside)
-    pastButton.addTarget(self, action: #selector(pastButtonPressed), for: UIControlEvents.touchUpInside)
-    nextButton.addTarget(self, action: #selector(nextButtonPressed), for: UIControlEvents.touchUpInside)
+    futureButton.addTarget(self, action: #selector(futureButtonPressed), for: UIControl.Event.touchUpInside)
+    pastButton.addTarget(self, action: #selector(pastButtonPressed), for: UIControl.Event.touchUpInside)
+    nextButton.addTarget(self, action: #selector(nextButtonPressed), for: UIControl.Event.touchUpInside)
   }
   
   /// Indicate who is the next person to play
   @objc private func nextButtonPressed() {
     gameView.showQuestionButtons()
-    label.text = "\(arc4random_uniform(UInt32(10)) + 1)"
+    label.text = "\(Int.random(in: 1...10))"
   }
   
   /// Display a question about the future

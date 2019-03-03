@@ -33,8 +33,8 @@ class Button: UIButton {
     self.isAvailable = true
     self.defaultColor = color
     self.backgroundColor = defaultColor
-    self.setTitle(text, for: UIControlState.normal)
-    self.setTitleColor(UIColor.white, for: UIControlState.normal)
+    self.setTitle(text, for: UIControl.State.normal)
+    self.setTitleColor(UIColor.white, for: UIControl.State.normal)
     self.layer.cornerRadius = 5
   }
 }

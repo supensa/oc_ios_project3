@@ -6,8 +6,6 @@
 //  Copyright © 2017 Spencer Forrest. All rights reserved.
 //
 
-import Foundation
-
 /// Represent the question used in the game
 class Question {
   private var interrogativeSentences: [String] = [String]()
@@ -18,9 +16,9 @@ class Question {
   /// - Parameter future: Question about the future or the past ? (future by default)
   /// - Returns: A random question as a String
   func getRandom(fromFuture future: Bool = true) -> String{
-    duration = RandomTime().getString()
+    duration = RandomTime.getString()
     interrogativeSentences = future ? getFutureSentences() : getPastSentences()
-    return interrogativeSentences[Int(arc4random_uniform(UInt32(interrogativeSentences.count)))]
+    return interrogativeSentences[Int.random(in: 1...interrogativeSentences.count)]
   }
   
   /// Generate questions about the past
