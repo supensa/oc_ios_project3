@@ -26,6 +26,11 @@
 		590BA9D01FE73FEC00F0521B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		590BA9D21FE73FEC00F0521B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		590BA9DB1FE7429F00F0521B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		592047882245191E00C55212 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		5920478A22452A2C00C55212 /* shamaz4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shamaz4.png; sourceTree = "<group>"; };
+		5920478B22452A2C00C55212 /* shamaz3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shamaz3.png; sourceTree = "<group>"; };
+		5920478C22452A2C00C55212 /* shamaz2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shamaz2.png; sourceTree = "<group>"; };
+		5920478D22452A2C00C55212 /* shamaz1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shamaz1.png; sourceTree = "<group>"; };
 		59359A551FF7E34100B1C369 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		59359A581FF7E99200B1C369 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		596F73DE1FEDA4C400EC8107 /* RandomTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomTime.swift; sourceTree = "<group>"; };
@@ -50,6 +55,8 @@
 			children = (
 				590BA9C51FE73FEC00F0521B /* Shamaz */,
 				590BA9C41FE73FEC00F0521B /* Products */,
+				592047882245191E00C55212 /* README.md */,
+				5920478922452A2C00C55212 /* Images */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,6 +107,17 @@
 				590BA9CF1FE73FEC00F0521B /* LaunchScreen.storyboard */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5920478922452A2C00C55212 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				5920478A22452A2C00C55212 /* shamaz4.png */,
+				5920478B22452A2C00C55212 /* shamaz3.png */,
+				5920478C22452A2C00C55212 /* shamaz2.png */,
+				5920478D22452A2C00C55212 /* shamaz1.png */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 		59359A571FF7E97100B1C369 /* Utilities */ = {
